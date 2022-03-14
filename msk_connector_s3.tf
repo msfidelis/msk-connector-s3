@@ -57,7 +57,7 @@
 #   name                    = format("%s-%s-s3-connect-%s", var.project_name, var.topic_sync, random_string.s3.result)
 #   properties_file_content = <<EOT
 # name=${var.topic_sync}
-# connector.class=io.confluent.connect.s3.S3SinkConnector
+# connector.class=io.io.confluent.connect.s3.S3SinkConnector
 # tasks.max=1
 # topics=${var.topic_sync}
 
@@ -81,7 +81,7 @@
 #   name                    = format("%s-%s-s3-connect-%s", var.project_name, var.topic_sync, random_string.s3.result)
 #   properties_file_content = <<EOT
 # name=s3-sink
-# connector.class: io.confluent.connect.s3.S3SinkConnector
+# connector.class: io.io.confluent.connect.s3.S3SinkConnector
 # key.converter: org.apache.kafka.connect.json.JsonConverter
 # value.converter: org.apache.kafka.connect.json.JsonConverter
 # key.converter.schemas.enable: true
@@ -145,7 +145,7 @@
 #   ]
 
 #   connector_configuration = {
-#     "connector.class" : "io.confluent.connect.s3.S3SinkConnector"
+#     "connector.class" : "io.io.confluent.connect.s3.S3SinkConnector"
 #     "key.converter": "org.apache.kafka.connect.json.JsonConverter"
 #     "value.converter": "org.apache.kafka.connect.json.JsonConverter"
 #     "key.converter.schemas.enable": true

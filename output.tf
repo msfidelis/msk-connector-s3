@@ -1,6 +1,6 @@
 output "connect_configuration" {
   value = <<LOGS
-connector.class=io.confluent.connect.s3.S3SinkConnector
+connector.class=io.io.confluent.connect.s3.S3SinkConnector
 flush.size=100
 format.class=io.confluent.connect.s3.format.bytearray.ByteArrayFormat
 path.format=YYYY/MM/dd
@@ -24,7 +24,7 @@ behavior.on.null.values=ignore
 schema.ignore=true
 
 
-connector.class=io.confluent.connect.s3.S3SinkConnector
+connector.class=io.io.confluent.connect.s3.S3SinkConnector
 behavior.on.null.values=ignore
 filename.offset.zero.pad.width=10
 s3.region=sa-east-1

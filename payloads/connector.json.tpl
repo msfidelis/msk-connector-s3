@@ -1,6 +1,6 @@
 {
     "connectorConfiguration": {
-        "connector.class": "io.confluent.connect.s3.S3SinkConnector",
+        "connector.class": "io.io.confluent.connect.s3.S3SinkConnector",
         "s3.region": "us-east-1",
         "format.class": "io.confluent.connect.s3.format.json.JsonFormat",
         "flush.size": "1",
