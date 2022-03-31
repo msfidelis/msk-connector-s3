@@ -42,3 +42,8 @@ variable "subnets" {
       "subnet-23a9760d"
   ]
 }
+
+variable "create_vpc_endpoint" {
+  type    = bool 
+  default = true
+}

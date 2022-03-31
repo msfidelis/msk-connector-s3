@@ -6,7 +6,11 @@ resource "aws_msk_cluster" "main" {
   broker_node_group_info {
     instance_type   = var.node_type
     ebs_volume_size = var.volume_size
-    client_subnets  = var.subnets
+    client_subnets  = [
+      aws_subnet.public_subnet_1a.id,
+      aws_subnet.public_subnet_1b.id,
+      aws_subnet.public_subnet_1c.id,
+    ]
     security_groups = [aws_security_group.sg.id]
   }
 
@@ -30,48 +34,48 @@ resource "aws_security_group" "sg" {
   name        = var.project_name
   description = var.project_name
 
-  vpc_id      = data.aws_vpc.main.id
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     from_port        = 9092
     to_port          = 9092
     protocol         = "tcp"
-    cidr_blocks      = [ data.aws_vpc.main.cidr_block ]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
-
+  
   ingress {
     from_port        = 9094
     to_port          = 9094
     protocol         = "tcp"
-    cidr_blocks      = [ data.aws_vpc.main.cidr_block ]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   ingress {
     from_port        = 2182
     to_port          = 2182
     protocol         = "tcp"
-    cidr_blocks      = [ data.aws_vpc.main.cidr_block ]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   ingress {
     from_port        = 2181
     to_port          = 2181
     protocol         = "tcp"
-    cidr_blocks      = [ data.aws_vpc.main.cidr_block ]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   ingress {
     from_port        = 8443
     to_port          = 8443
     protocol         = "tcp"
-    cidr_blocks      = [ data.aws_vpc.main.cidr_block ]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   ingress {
     from_port        = 8083
     to_port          = 8083
     protocol         = "tcp"
-    cidr_blocks      = [ data.aws_vpc.main.cidr_block ]
+    cidr_blocks      = ["0.0.0.0/0"]
   }    
 
   egress {
