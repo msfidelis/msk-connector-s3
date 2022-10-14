@@ -1,5 +1,5 @@
 # Amazon MSK Sync data to S3
-Example to sync Kafka Topics on MSK with S3 Bucket for Data Lake creations
+Example to sync kafka topics on MSK on S3 Buckets for Data Lake creations using MSK Connect and Kafka-Connect
 
 # Project Architecture
 
